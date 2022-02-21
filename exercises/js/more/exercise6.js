@@ -11,7 +11,23 @@ function initGrid() {
         }
     }
 
-    // TODO complete the rest
+    for (let i=0; i<colors.length; i++){
+        var colorBlock = document.createElement("div");
+        colorBlock.classList.add("choice");
+        colorBlock.style.backgroundColor = colors[i];
+        var palette = document.getElementById("colors");
+        palette.appendChild(colorBlock);
+        colorBlock.addEventListener("click", displayer);
+    }
+
+}
+
+function displayer(){
+    var color = this.style.backgroundColor;
+    var selected = document.getElementById("selected");
+    selected.style.backgroundColor = color;
+    selected.innerHTML = color;
+
 }
 
 window.onload = function () {

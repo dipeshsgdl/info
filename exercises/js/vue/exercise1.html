@@ -27,14 +27,18 @@
         .even {
             background-color: lightgray;
         }
+        .counter_label{
+            float:right;
+        }
     </style>
 </head>
 <body>
     <div id="app">
         <div class="counter_container">
-            <div class="counter">
-                <span id="count" class="count">0</span>
-                <button>Add</button>
+            <div class="counter" v-bind:class="{'even': isEven}">
+                <span id="count" class="count">{{count}}</span>
+                <button v-on:click="increment">Add</button>
+                <span class="counter_label">{{isEven? "even":"odd"}}</span>
             </div>
         </div>
     </div>
@@ -47,6 +51,14 @@
                 }
             },
             methods: {
+                increment: function(){
+                    this.count += 1;
+                }
+            },
+            computed: {
+                isEven: function(){
+                    return (this.count%2 ==0);
+                }
             }
         }).mount("#app");
     </script>

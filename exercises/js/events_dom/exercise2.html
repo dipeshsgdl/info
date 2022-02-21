@@ -11,7 +11,28 @@
         }
     </style>
     <script>
-        /* TODO: write JS code here */
+
+        color=["red", "blue", "yellow", "green", "black"];
+
+        function colorChange() {
+            let nowColor=this.style.backgroundColor;
+            let idx=color.indexOf(nowColor);
+            idx++;
+            if (idx==color.length) {
+                idx=0;
+            }
+            this.style.backgroundColor=color[idx];
+        }
+
+        function init(){
+           let mydiv = document.getElementById("mydiv");
+           rnd=Math.floor(Math.random()*color.length);
+           mydiv.style.backgroundColor = color[rnd];
+           mydiv.onclick = colorChange;
+        }
+
+       window.onload = init;
+        
     </script>
 </head>
 <body>

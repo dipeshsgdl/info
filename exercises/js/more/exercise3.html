@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <title>Exercise #3: Simple playlist</title>
     <link rel="stylesheet" href="exercise3.css">
-    <script>
-        /* TODO this is for you to complete */
+   
+   <script>
+        function addSong(){
+            var song=document.getElementById("songTextInput");
+            var songname=song.value;
+
+            if (songname==""){
+                alert("Please type a song name");
+            }
+
+            else{
+            var adding=document.getElementById("playlist");
+            var newlist=document.createElement("li");
+           
+            newlist.innerHTML=songname;
+            
+            var image=document.createElement("img");
+            image.src="images/delete.png";
+            image.className="delete";
+            image.onclick=delsong;
+
+            newlist.appendChild(image);
+            adding.appendChild(newlist);
+            
+        }
+        }
+
+        function delsong(){
+            var song = this.parentNode;
+            song.parentNode.removeChild(song);
+        }
+
+        window.onload = function(){
+            var addButton = document.getElementById("addButton");
+            addButton.onclick=addSong;
+        }
     </script>
 </head>
 <body>

@@ -33,8 +33,9 @@ function getSecondDisplay(seconds){
 }
 
 function onTick(){
-    timeLeft--;
     setDisplay(false);
+    timeLeft--;
+    
     if (timeLeft === 0){
         alert("Time is up!");
         document.querySelector("#countdown").style.display = "none";

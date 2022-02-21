@@ -16,10 +16,18 @@
         }
     </style>
     <script>
+        function myEvent(event, message){
+            event.innerHTML= message;
+        }
         // use onmouseover onmouseleave and innerHTML
     </script>
 </head>
 <body>
-<div id="mydiv" >Hello world</div>
+<div id="mydiv" 
+    onmouseover="myEvent(this, 'Can I help you')" 
+    onmouseleave="myEvent(this, 'Hello world');">
+    Hello World!
+</div>
+
 </body>
 </html>

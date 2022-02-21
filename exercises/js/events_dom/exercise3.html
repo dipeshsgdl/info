@@ -5,12 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    
+    <script>
+        function selectFlag(){
+            var x = document.getElementById("country").selectedIndex;
+            if (x == 1){
+                document.getElementById("flag").src="use-images/flag_NO.png";
+                document.getElementById("flag").alt="Norge";
+            }
+            else if (x == 2){
+                document.getElementById("flag").src="use-images/flag_SE.png";
+                document.getElementById("flag").alt="Sverige";
+            }
+            else if (x == 3){
+                document.getElementById("flag").src="use-images/flag_IL.png";
+                document.getElementById("flag").alt="ISland";
+            }
+            else if (x == 4){
+                document.getElementById("flag").src="use-images/flag_DK.png";
+                document.getElementById("flag").alt="Danmark";
+            }
+            else{
+                document.getElementById("flag").src="use-images/no_image.png";
+                document.getElementById("flag").alt="Select";
+            }
+        }
+    </script>
 </head>
 <body>
-    <select name="country" id="country">
+    <select name="country" id="country" onchange="selectFlag();">
         <option value="use-images/no_image.png">Select</option>
         <option value="use-images/flag_NO.png">Norge</option>
+        <option value="use-images/flag_SE.png">Sverige</option>
+        <option value="use-images/flag_IL.png">Island</option>
+        <option value="use-images/flag_DK.png">Danmark</option>
+
     </select>
-    <img src="use-images/no_image.png" alt="Select">
+
+    <img src="use-images/no_image.png" alt="Select" id="flag">
+
+    
 </body>
 </html>

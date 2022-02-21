@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The input pattern attribute</h1>
+
+<p>A form with a search field that CANNOT contain the following characters: ' or "</p>
+
+<form>
+  <label for="search">Search:</label>
+  <label for="emailid" class="fixed" >Email:</label><input type="text" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="not acceptable email format"> <br/>
+  <input type="submit" value="Add">
+</form>
+
+</body>
+</html>
