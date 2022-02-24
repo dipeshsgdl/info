@@ -14,7 +14,8 @@
 <body>
 <div id="app">
     <form>
-        <input type="text" id="songTextInput" size="40" placeholder="Song name" v-model="song">
+        <input type="text" id="songTextInput" size="40" placeholder="Song name" v-model="song">  <!-- v-model is a twoway binding to the databoject
+        // v-model is a twoway binding to the databoject -->
         <input type="text" id="bandTextInput" size="40" placeholder="Band name" v-model="band">
         <input type="button" id="addButton" value="Add Song" v-on:click="addSong">
     </form>
@@ -43,7 +44,7 @@
                     new Song("Second favorite", "Other band")
                 ],
                 // the values modelled by the form
-                song: null,
+                song: null, // here we store our input from the input fields
                 band:null
             }
         },
